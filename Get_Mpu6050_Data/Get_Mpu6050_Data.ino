@@ -21,7 +21,7 @@ float k_roll, k_pitch;              //卡尔曼滤波后估计出最优角度，
 float e_P[2][2];         //误差协方差矩阵，这里的e_P既是先验估计的P，也是最后更新的P
 // 卡尔曼增益K
 float k_k[2][2];         //这里的卡尔曼增益矩阵K是一个2X2的方阵
-const int buttonPin = 2; // 定义按钮引脚///////////////////////////////////////////////////////////////////
+const int buttonPin = 2; // 定义按钮引脚///////////////////////////////////////////////////////////////////这里修改成你想要设置按键的引脚
 int buttonState;          // 当前按钮状态
 int lastButtonState = HIGH; // 上一次按钮状态
 unsigned long lastDebounceTime = 0; // 上一次去抖动时间
@@ -29,7 +29,7 @@ unsigned long debounceDelay = 10;   // 去抖动延时
 
 void setup() {
   Serial.begin(115200);
-  Wire.begin(8, 9);/////////////////////////////////////////////////////////////////////////////////////
+  Wire.begin(8, 9);/////////////////////////////////////////////////////////////////////////////////////这里修改成你esp对应型号的scl和sda的引脚，不清楚的查看另一个esp资料的文件夹
   mpu.initialize();
 
   if (!mpu.testConnection()) {
@@ -137,12 +137,12 @@ void kalman_update(int i) {
 
   // 打印数据
   // 打印数据
-  Serial.print(Ox);
+  Serial.print(Ox);//////////////////////////////////////////////////////////////////////////////////////////////
   Serial.print(",");
   Serial.print(Oz);
 //  Serial.print(String(Ox, 4));       // 输出 Ox 值，保留4位小数
 //  Serial.print(",");
-//  Serial.print(String(Oz, 4));       // 输出 Oz 值，保留4位小数
+//  Serial.print(String(Oz, 4));       // 输出 Oz 值，保留4位小数/////////////////////////////////////////////////
   if (i != freq * second - 1) {
     Serial.print(",");
   }
