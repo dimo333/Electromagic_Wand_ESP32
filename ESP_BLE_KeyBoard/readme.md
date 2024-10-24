@@ -1,3 +1,5 @@
+这个蓝牙控制的代码并非有我编写这是它的github链接：https://github.com/T-vK/ESP32-BLE-Keyboard
+
 关于ESP_BLE_KeyBoard程序：
 ---
 这是一个模拟键盘信号的示例程序，我在代码里填写了一个简单的快捷输入helloworld，你可以根据自己的需要来更改。
