@@ -1,4 +1,3 @@
-#这个模型训练的代码最初是由21佬编写的，这是他的github链接https://github.com/Songyeyaosong/MagicWand
 import tensorflow as tf
 import pandas as pd
 import math
