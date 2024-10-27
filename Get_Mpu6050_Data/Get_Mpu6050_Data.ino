@@ -3,8 +3,10 @@
 MPU6050 mpu;
 
 // 定义每秒采样次数
-const int freq = 64;
+const int freq = 100;
 const int second = 2;
+// const int freq = 64;
+// const int second = 2;
 // 重力分量
 float gravity_x;
 float gravity_y;
