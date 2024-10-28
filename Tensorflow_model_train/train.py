@@ -3,7 +3,7 @@ import pandas as pd
 import math
 
 # 设置数据集的形状
-timesteps = 128
+timesteps = 200
 lr = 1e-4
 num_epochs = 200
 batch_size = 4
