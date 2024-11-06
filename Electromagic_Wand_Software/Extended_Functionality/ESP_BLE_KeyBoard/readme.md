@@ -9,4 +9,3 @@
 
 最后的最后：
 不要忘了留意我写的注释。<br>
-这个蓝牙控制的代码并非由我编写，这是它最初的github链接：https://github.com/T-vK/ESP32-BLE-Keyboard
