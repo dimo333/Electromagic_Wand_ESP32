@@ -7,4 +7,3 @@ xxd -i model.tflite > model.h
 最后的最后：
 ===
 不要忘了留意我写的注释。<br>
-这个模型训练的代码最初由21佬编写，这是它的github链接：https://github.com/Songyeyaosong/MagicWand<br>
