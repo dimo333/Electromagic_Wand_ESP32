@@ -53,8 +53,8 @@ void setup() {
   
   // 初始化MPU6050
   Wire.beginTransmission(MPU6050_ADDR);
-  Wire.write(PWR_MGMT_1);  // 选择电源管理寄存器
-  Wire.write(0);           // 写入0以唤醒传感器
+  Wire.撰写(PWR_MGMT_1);  // 选择电源管理寄存器
+  Wire.撰写(0);           // 写入0以唤醒传感器
   Wire.endTransmission(true);
   delay(100);  // 等待传感器初始化
   
@@ -64,6 +64,9 @@ void setup() {
   // 初始化蓝牙鼠标
   bleMouse.begin();
 
+  // 消除累计误差
+  calculateBias();
+
   // 打印启动状态
   Serial.println("Starting data collection...");
   delay(1000);
@@ -72,27 +75,27 @@ void setup() {
 // 设置陀螺仪灵敏度
 void setGyroSensitivity(int scale) {
   Wire.beginTransmission(MPU6050_ADDR);
-  Wire.write(GYRO_CONFIG);  // 选择陀螺仪配置寄存器
+  Wire.撰写(GYRO_CONFIG);  // 选择陀螺仪配置寄存器
 
   switch (scale) {
     case 250:
-      Wire.write(0x00);  // +/- 250°/s
+      Wire.撰写(0x00);  // +/- 250°/s
       gyro_scale_factor = 1.0 / 131.0;
       break;
     case 500:
-      Wire.write(0x08);  // +/- 500°/s
+      Wire.撰写(0x08);  // +/- 500°/s
       gyro_scale_factor = 1.0 / 65.0;
       break;
     case 1000:
-      Wire.write(0x10);  // +/- 1000°/s
+      Wire.撰写(0x10);  // +/- 1000°/s
       gyro_scale_factor = 1.0 / 32.8;
       break;
     case 2000:
-      Wire.write(0x18);  // +/- 2000°/s
+      Wire.撰写(0x18);  // +/- 2000°/s
       gyro_scale_factor = 1.0 / 16.4;
       break;
-    default:
-      Wire.write(0x00);  // 默认设置为 250°/s
+    默认:
+      Wire.撰写(0x00);  // 默认设置为 250°/s
       gyro_scale_factor = 1.0 / 131.0;
   }
 
@@ -102,13 +105,13 @@ void setGyroSensitivity(int scale) {
 // 读取角速度数据
 void readGyroData() {
   Wire.beginTransmission(MPU6050_ADDR);
-  Wire.write(GYRO_YOUT_H);  // 修改为读取Y轴角速度
+  Wire.撰写(GYRO_YOUT_H);  // 修改为读取Y轴角速度
   Wire.endTransmission(false);
   Wire.requestFrom(MPU6050_ADDR, 2, true);
   gyroZ = (Wire.read() << 8 | Wire.read());  // 读取Z轴角速度
   
   Wire.beginTransmission(MPU6050_ADDR);
-  Wire.write(GYRO_ZOUT_H);  // Z轴角速度高字节寄存器地址
+  Wire.撰写(GYRO_ZOUT_H);  // Z轴角速度高字节寄存器地址
   Wire.endTransmission(false);
   Wire.requestFrom(MPU6050_ADDR, 2, true);
   gyroY = (Wire.read() << 8 | Wire.read());  // 修改为读取Y轴角速度
