@@ -6,13 +6,18 @@
 
 我还提供了训练代码，你可以根据自己设计的动作“训练法术”。如果你有更好的创意或代码，欢迎交流、学习与分享！
 
+- 📘 [完整项目地址github](https://github.com/dimo333/Electromagic_Wand_ESP32)
+- 📘 [完整项目地址gitee](https://gitee.com/dimo666/Electromagic_Wand_ESP32/tree/main)
+- 📘 [PCB文件地址oshwhub](https://oshwhub.com/6dimo9/electromagic_wand_esp32)
 ---
 
 ## 🚀 快速开始
 
 我已编写详细的图文教程和环境配置指南：
 
-- 📘 [教程文档](1_docs-/tutorial)
+
+- 📘 [教程文档github](https://github.com/dimo333/Electromagic_Wand_ESP32/tree/main/1_docs-/tutorial)
+- 📘 [教程文档gitee](https://gitee.com/dimo666/Electromagic_Wand_ESP32/tree/main/1_docs-/tutorial)
 - 📺 [B站视频教程（基础演示）](https://www.bilibili.com/video/BV1NtwreXEzg)
 
 ---
