@@ -24,7 +24,7 @@
 1. 仔细检查是否遗漏了教程中的某一步。
 2. 复制错误信息，使用搜索引擎或 AI 工具查找答案。
 3. 加入 QQ 群：**884880944**。
-4. B站后台私信我：[@dimo333](https://space.bilibili.com/)。
+4. B站后台私信我：[dimo333](https://space.bilibili.com/)。
 5. 发送邮件联系我：
    - 📧 dimo333mail@gmail.com（注意拼写）
    - 📧 3180405726@qq.com
