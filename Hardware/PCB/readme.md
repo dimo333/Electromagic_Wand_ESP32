@@ -1,0 +1,1 @@
+https://oshwhub.com/6dimo9/electromagic_wand_esp32
