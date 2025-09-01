@@ -16,8 +16,8 @@
 我已编写详细的图文教程和环境配置指南：
 
 
-- 📘 [教程文档github](https://github.com/dimo333/Electromagic_Wand_ESP32/tree/main/1_docs-/tutorial)
-- 📘 [教程文档gitee](https://gitee.com/dimo666/Electromagic_Wand_ESP32/tree/main/1_docs-/tutorial)
+- 📘 [教程文档github](https://github.com/dimo333/Electromagic_Wand_ESP32/tree/main/docs/tutorial)
+- 📘 [教程文档gitee](https://gitee.com/dimo666/Electromagic_Wand_ESP32/tree/main/docs/tutorial)
 - 📺 [B站视频教程（基础演示）](https://www.bilibili.com/video/BV1NtwreXEzg)
 
 ---
