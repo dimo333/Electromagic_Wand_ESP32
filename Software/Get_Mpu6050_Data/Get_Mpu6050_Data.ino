@@ -139,12 +139,10 @@ void kalman_update(int i) {
 
   // 打印数据
   // 打印数据
-  Serial.print(Ox);//////////////////////////////////////////////////////////////////////////////////////////////
+  Serial.print(Ox*9.8);///////////////////////////////////////
   Serial.print(",");
-  Serial.print(Oz);
-//  Serial.print(String(Ox, 4));       // 输出 Ox 值，保留4位小数
-//  Serial.print(",");
-//  Serial.print(String(Oz, 4));       // 输出 Oz 值，保留4位小数/////////////////////////////////////////////////
+  Serial.print(Oz*9.8);
+
   if (i != freq * second - 1) {
     Serial.print(",");
   }
@@ -180,3 +178,4 @@ void resetState() {
 
   prevTime = millis();
 }
+
