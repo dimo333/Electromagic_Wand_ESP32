@@ -15,7 +15,7 @@ const tflite::Model* model = nullptr;
 tflite::MicroInterpreter* interpreter = nullptr;
 TfLiteTensor* model_input = nullptr;
 
-const int num_classes = 4;//////////////////////////////////////////////////////////////类别的数量，比如说你录了4个动作，那就写5，类推
+const int num_classes = 4;//////////////////////////////////////////////////////////////动作（手势）的数量，有几个就写几个
 const int input_dim = 2;////////////////////////////////////////////////////////////////传感器收集数据的维度，比如你只录入了x轴和z轴，那就写2，类推。
 
 constexpr int kTensorArenaSize = 50 * 1024;
@@ -244,8 +244,8 @@ void get_kalman_mpu_data(int i, float* input) {
   Oy = cos(k_roll) * Ay - sin(k_roll) * Az;
   Oz = -sin(k_pitch) * Ax + cos(k_pitch) * sin(k_roll) * Ay + cos(k_pitch) * cos(k_roll) * Az;
 
-  input[i * input_dim] = Ox;
-  input[i * input_dim + 1] = Oz;
+  input[i * input_dim] = Ox*9.8;
+  input[i * input_dim + 1] = Oz*9.8;
 
   delay(1000 / freq); // 短暂延迟，避免过高的循环频率
 }
@@ -274,3 +274,4 @@ void processGesture(float* output) {
     
   }
 }
+
