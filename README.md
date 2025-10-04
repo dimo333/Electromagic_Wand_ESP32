@@ -27,10 +27,11 @@
 请尝试以下方法：
 
 1. 仔细检查是否遗漏了教程中的某一步。
-2. 复制错误信息，使用搜索引擎或 AI 工具查找答案。
-3. 加入 QQ 群：**884880944**。
-4. B站后台私信我：[dimo333](https://space.bilibili.com/)。
-5. 发送邮件联系我：
+2. 根据[H_elp](https://github.com/dimo333/Electromagic_Wand_ESP32/tree/main/docs/H_elp)文档进行自救<br>
+3. 复制错误信息，使用搜索引擎或 AI 工具查找答案。
+4. 加入 QQ 群：**884880944**。
+5. B站后台私信我：[dimo333](https://space.bilibili.com/)。
+6. 发送邮件联系我：
    - 📧 dimo333mail@gmail.com（注意拼写）
    - 📧 3180405726@qq.com
 
