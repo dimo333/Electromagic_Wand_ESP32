@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * This work is derived from the following project:
+ * Source: https://github.com/Songyeyaosong/MagicWand
+ * Original Author: Songyeyaosong
+ *
+ * Modified by: dimo333
+ * ------------------------------------------------------------
+ */
 import tensorflow as tf
 import pandas as pd
 import math
