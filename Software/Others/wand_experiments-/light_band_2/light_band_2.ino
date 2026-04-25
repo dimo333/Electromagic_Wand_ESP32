@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * This work is derived from the following project:
+ * Source: https://github.com/Songyeyaosong/MagicWand
+ * Original Author: Songyeyaosong
+ *
+ * Modified by: dimo333
+ * ------------------------------------------------------------
+ */
 #include <Adafruit_NeoPixel.h>
 
 #define NUM_LEDS 20              // 控制的LED数量
