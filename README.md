@@ -93,3 +93,7 @@
 ## 复刻路线
 ![复刻路线](docs/Guidelines.png)
 
+## 🤝 鸣谢与参考
+
+* [MagicWand](https://github.com/Songyeyaosong/MagicWand) - 感谢其最早实现了赛博魔杖的底层功能，为本项目的二次开发提供了参考。
+* [esp32_mouse_keyboard](https://github.com/asterics/esp32_mouse_keyboard) - 感谢其提供的 BLE 鼠标与键盘模拟功能，极大丰富了魔杖的交互能力。
