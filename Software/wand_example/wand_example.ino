@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * This work is derived from the following project:
+ * Source: https://github.com/Songyeyaosong/MagicWand
+ * Original Author: Songyeyaosong
+ *
+ * Modified by: dimo333
+ * ------------------------------------------------------------
+ */
 #include <TensorFlowLite_ESP32.h>
 #include "model.h"
 #include "tensorflow/lite/micro/kernels/micro_ops.h"
