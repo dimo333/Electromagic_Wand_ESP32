@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * This work is derived from the following project:
+ * Source: https://github.com/Songyeyaosong/MagicWand
+ * Original Author: Songyeyaosong
+ *
+ * Modified by: dimo333
+ * ------------------------------------------------------------
+ */
 #include "Wire.h"
 #include "MPU6050.h"
 MPU6050 mpu;
