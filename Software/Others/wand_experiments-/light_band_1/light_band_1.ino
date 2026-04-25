@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * This work is derived from the following project:
+ * Source: https://github.com/Songyeyaosong/MagicWand
+ * Original Author: Songyeyaosong
+ *
+ * Modified by: dimo333
+ * ------------------------------------------------------------
+ */
 #include <Adafruit_NeoPixel.h>
 
 #define NUM_LEDS 68///////////////////////////////////////////////////这里填写你想要控制灯的数量
@@ -8,7 +17,7 @@ Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUM_LEDS, DATA_PIN, NEO_GRB + NEO_KH
 
 void setup() {
   strip.begin();
-  strip.显示();
+  strip.show();
   pinMode(BUTTON_PIN, INPUT_PULLUP); // 设置按键引脚为输入，并启用内部上拉电阻
 }
 
@@ -25,7 +34,7 @@ void energyGatherAndBurst(uint8_t gatherDelay, uint8_t burstDelay) {
     for (int i = 0; i < baseLeds; i++) {
       strip.setPixelColor(i, strip.Color(brightness, brightness, brightness));
     }
-    strip.显示();
+    strip.show();
     delay(gatherDelay);
   }
   // 爆发效果 - LED从底部快速移动到顶部
@@ -33,18 +42,18 @@ void energyGatherAndBurst(uint8_t gatherDelay, uint8_t burstDelay) {
   for (int i = 0; i < baseLeds; i++) {
     strip.setPixelColor(i, strip.Color(255, 255, 255));
   }
-  strip.显示();
+  strip.show();
   delay(burstDelay);
   for (int i = 1; i <= strip.numPixels() - baseLeds; i++) {
     strip.clear();
     for (int j = 0; j < baseLeds; j++) {
       strip.setPixelColor(i + j, strip.Color(255, 255, 255));
     }
-    strip.显示();
+    strip.show();
     delay(burstDelay);
   }
   // 清除顶部亮光
   strip.clear();
-  strip.显示();
+  strip.show();
   delay(500); // 增加一个小的延迟以区分效果循环
 }
