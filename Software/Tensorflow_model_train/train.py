@@ -1,23 +1,22 @@
-/*
- * ------------------------------------------------------------
- * This work is derived from the following project:
- * Source: https://github.com/Songyeyaosong/MagicWand
- * Original Author: Songyeyaosong
- *
- * Modified by: dimo333
- * ------------------------------------------------------------
- */
+# ------------------------------------------------------------
+# This work is derived from the following project:
+# Source: https://github.com/Songyeyaosong/MagicWand
+# Original Author: Songyeyaosong
+#
+# Modified by: dimo333
+# ------------------------------------------------------------
+
 import tensorflow as tf
 import pandas as pd
 import math
 
 # 设置数据集的形状
-timesteps = 200#/////////////////////////////////////////////////////////////使用64hz2s的改为128，100hz2s的改为200
+timesteps = 200 # 使用64hz2s的改为128，100hz2s的改为200
 lr = 1e-4
 num_epochs = 200
 batch_size = 4
-input_dim = 2#///////////////////////////////////////////////////////////////传感器收集数据的维度，比如你只录入了x轴和z轴，那就写2，类推。
-num_classes = 5#/////////////////////////////////////////////////////////////动作（手势）的数量，有几个就写几个
+input_dim = 2 # 传感器收集数据的维度，比如你只录入了x轴和z轴，那就写2，类推。
+num_classes = 5 # 动作（手势）的数量，有几个就写几个
 
 class Model(tf.keras.Model):
     def __init__(self):
@@ -41,10 +40,10 @@ class Model(tf.keras.Model):
 
 if __name__ == '__main__':
 
-    train_x_pd = pd.read_csv('data_x.csv', header=None)#////////////////////////////改成你录入数据的文件
-    train_y_pd = pd.read_csv('data_y.csv', header=None)#////////////////////////////改成你录入数据对应分类的文件
-    test_x_pd = pd.read_csv('test_x.csv', header=None)#////////////////////////////这是一个用于测试的文件，和上面的两个文件一样的录入方法
-    test_y_pd = pd.read_csv('test_y.csv', header=None)#////////////////////////////如果不想重新录就把名字改成和上面文件名的一样，比如test_x就改成data_x，类推
+    train_x_pd = pd.read_csv('data_x.csv', header=None) # 改成你录入数据的文件
+    train_y_pd = pd.read_csv('data_y.csv', header=None) # 改成你录入数据对应分类的文件
+    test_x_pd = pd.read_csv('test_x.csv', header=None) # 这是一个用于测试的文件，和上面的两个文件一样的录入方法
+    test_y_pd = pd.read_csv('test_y.csv', header=None) # 如果不想重新录就把名字改成和上面文件名的一样，比如test_x就改成data_x，类推
 
     train_x = tf.convert_to_tensor(train_x_pd.to_numpy(), dtype=tf.float32)
     train_x = tf.reshape(train_x, [-1, timesteps, input_dim])
