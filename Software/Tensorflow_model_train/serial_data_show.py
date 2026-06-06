@@ -1,4 +1,5 @@
 import serial
+import traceback
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -12,6 +13,8 @@ data_y = 'data_y.csv' # 替换为你要存放数据对应动作分类的文件
 label = [6]  # 方框里改成你要录入的动作的序号，比如我现在要录入第一个动作，那就写0，类推。
 
 num = 0
+first_line = True # 标记是否为第一条数据
+
 
 # 配置数据可视化
 plt.figure(figsize=(12, 6))
@@ -29,6 +32,11 @@ try:
             if ser.in_waiting > 0:
                 line = ser.readline().decode('utf-8').strip()
                 print(f"读取到数据: {line}")  # 打印读取到的数据
+
+                if first_line:
+                    first_line = False
+                    print("已忽略第一条数据")
+                    continue
 
                 try:
                     # 将数据按逗号分割并转换为float32
@@ -72,7 +80,7 @@ try:
                     plt.pause(0.1)  # 暂停以刷新图像
 
                 except ValueError as e:
-                    print(f"数据转换错误: {e}")
+                    print(traceback.print_exc())
 
 except serial.SerialException as e:
     print(f"串口打开失败: {e}")
