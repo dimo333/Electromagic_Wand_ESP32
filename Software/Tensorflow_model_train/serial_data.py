@@ -1,24 +1,27 @@
-/*
- * ------------------------------------------------------------
- * This work is derived from the following project:
- * Source: https://github.com/Songyeyaosong/MagicWand
- * Original Author: Songyeyaosong
- *
- * Modified by: dimo333
- * ------------------------------------------------------------
- */
-import serial 
+"""
+------------------------------------------------------------
+This work is derived from the following project:
+Source: https://github.com/Songyeyaosong/MagicWand
+Original Author: Songyeyaosong
+
+Modified by: dimo333
+------------------------------------------------------------
+"""
+
+import serial
+import traceback
 import pandas as pd
 
 # 配置串口参数
-port = 'COM14'  # ///////////////////////////////////////////////////////////////替换为你的ESP32连接的串口号
-baud_rate = 115200  # ///////////////////////////////////////////////////////////替换为你的ESP32的波特率
+port = 'COM14'  # 替换为你的ESP32连接的串口号
+baud_rate = 115200  # 替换为你的ESP32的波特率
 
-data_x = 'data_x.csv'#///////////////////////////////////////////////////////////替换为你要存放动作数据的文件
-data_y = 'data_y.csv'#///////////////////////////////////////////////////////////替换为你要存放数据对应动作分类的文件，比如你录入的是动作1，那么文档里就会存储序号0，类推。
-label = [5] #////////////////////////////////////////////////////////////////////方框里改成你要录入的动作的序号，比如我现在要录入第一个动作，那就写0，类推。
+data_x = 'data_x.csv' # 替换为你要存放动作数据的文件
+data_y = 'data_y.csv' # 替换为你要存放数据对应动作分类的文件，比如你录入的是动作1，那么文档里就会存储序号0，类推。
+label = [5] # 方框里改成你要录入的动作的序号，比如我现在要录入第一个动作，那就写0，类推。
 
 num = 0
+first_line = True # 标记是否为第一条数据
 
 try:
     # 打开串口
@@ -32,6 +35,11 @@ try:
             if ser.in_waiting > 0:
                 line = ser.readline().decode('utf-8').strip()
                 print(f"读取到数据: {line}")  # 打印读取到的数据
+
+                if first_line:
+                    first_line = False
+                    print("已忽略第一条数据")
+                    continue
 
                 try:
                     # 将数据按逗号分割并转换为float32
@@ -52,7 +60,7 @@ try:
                     num += 1
 
                 except ValueError as e:
-                    print(f"数据转换错误: {e}")
+                    print(traceback.print_exc())
 
 except serial.SerialException as e:
     print(f"串口打开失败: {e}")
