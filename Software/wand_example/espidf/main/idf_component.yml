@@ -1,0 +1,5 @@
+## Managed dependencies pulled from the ESP Component Registry on first build.
+dependencies:
+  idf: ">=5.1"
+  # Espressif's official TensorFlow Lite Micro port.
+  esp-tflite-micro: "^1.3.0"

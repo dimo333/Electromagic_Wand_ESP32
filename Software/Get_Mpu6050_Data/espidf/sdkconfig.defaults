@@ -1,0 +1,5 @@
+# 1 kHz FreeRTOS tick so vTaskDelay(10 ms) gives an accurate ~100 Hz sample rate.
+CONFIG_FREERTOS_HZ=1000
+
+# Give the sampling task a comfortable stack (float-heavy Kalman math).
+CONFIG_ESP_MAIN_TASK_STACK_SIZE=4096

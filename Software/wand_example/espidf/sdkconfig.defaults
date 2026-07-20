@@ -1,0 +1,11 @@
+# 1 kHz FreeRTOS tick so vTaskDelay(10 ms) gives an accurate ~100 Hz sample rate.
+CONFIG_FREERTOS_HZ=1000
+
+# TFLite Micro benefits from the compiler optimising for performance.
+CONFIG_COMPILER_OPTIMIZATION_PERF=y
+
+# Give app_main / the wand task a comfortable stack (model + math are float-heavy).
+CONFIG_ESP_MAIN_TASK_STACK_SIZE=8192
+
+# Silence the legacy-I2C deprecation path; we use the new i2c_master driver.
+CONFIG_I2C_ENABLE_DEBUG_LOG=n
